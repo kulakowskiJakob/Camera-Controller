@@ -9,7 +9,9 @@ class Camera:
 
         self.camera = Picamera2()
         config = self.camera.create_video_configuration(
-            main={"size": (width, height)}
+            main={"size": (width, height),
+                  "format": "RGB888"
+            }
         )
 
         self.camera.configure(config)
